@@ -3370,6 +3370,8 @@ void notify_adapter_event(enum adapter_type type, enum adapter_event evt,
 	void *val)
 {
 	chr_err("%s %d %d\n", __func__, type, evt);
+	if (!pinfo)
+		return;
 
 
 	switch (type) {
