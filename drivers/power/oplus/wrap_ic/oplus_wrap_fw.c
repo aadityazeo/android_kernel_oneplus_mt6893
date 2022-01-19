@@ -644,7 +644,8 @@ extern int main_hwid5_val;
 int oplus_wrap_asic_hwid_check(struct oplus_wrap_chip *chip)
 {
 	int rc;
-	static int asic_hwid_type = OPLUS_WRAP_MCU_HWID_UNKNOW;
+	/* HACK: Always return the correct ASIC */
+	static int asic_hwid_type = OPLUS_WRAP_ASIC_HWID_RT5125;
 	struct device_node *node = NULL;
 
 	if(asic_hwid_type != OPLUS_WRAP_MCU_HWID_UNKNOW) {
